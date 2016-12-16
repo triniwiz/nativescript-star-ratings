@@ -1,0 +1,8 @@
+<Page
+    xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded"
+    xmlns:TNSStarRatings="nativescript-star-ratings">
+    <StackLayout>
+        <Label text="Hello World" class="message" textWrap="true"/>
+        <TNSStarRatings:StarRating width="300" height="40" value="1" starColor="{{ starColor }}" />
+    </StackLayout>
+</Page>

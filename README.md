@@ -1,6 +1,7 @@
 # NativeScript Star Ratings (iOS)
 [![npm](https://img.shields.io/npm/v/nativescript-star-ratings.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/nativescript-star-ratings)
 [![npm](https://img.shields.io/npm/dt/nativescript-star-ratings.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/nativescript-star-ratings)
+
 This plugin contains the UI control for a star rating inside your NativeScript app. Currently this plugin is in development and only for iOS.
 
 

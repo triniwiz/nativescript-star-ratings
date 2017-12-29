@@ -1,18 +1,18 @@
 # NativeScript Star Ratings
 
-[![npm](https://img.shields.io/npm/v/nativescript-nativescript-star-ratings.svg)](https://www.npmjs.com/package/nativescript-nativescript-star-ratings)
-[![npm](https://img.shields.io/npm/dt/nativescript-nativescript-star-ratings.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-nativescript-star-ratings)
-[![Build Status](https://travis-ci.org//triniwiz/nativescript-nativescript-star-ratings.svg?branch=master)](https://travis-ci.org/triniwiz/nativescript-nativescript-star-ratings)
+[![npm](https://img.shields.io/npm/v/nativescript-star-ratings.svg)](https://www.npmjs.com/package/nativescript-star-ratings)
+[![npm](https://img.shields.io/npm/dt/nativescript-star-ratings.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-star-ratings)
+[![Build Status](https://travis-ci.org//triniwiz/nativescript-star-ratings.svg?branch=master)](https://travis-ci.org/triniwiz/nativescript-star-ratings)
 
 ## Installation
 
 ```
-tns plugin add nativescript-nativescript-star-ratings
+tns plugin add nativescript-star-ratings
 ```
 
 # Configuration
 
-IMPORTANT: Make sure you include xmlns:ui="nativescript-nativescript-star-ratings" on the
+IMPORTANT: Make sure you include xmlns:ui="nativescript-star-ratings" on the
 Page element
 
 ```xml
@@ -23,7 +23,7 @@ Page element
 
 ```
 import { registerElement } from 'nativescript-angular/element-registry';
-registerElement('StarRating', () => require('nativescript-nativescript-star-ratings').StarRating);
+registerElement('StarRating', () => require('nativescript-star-ratings').StarRating);
 ```
 
 ```xml

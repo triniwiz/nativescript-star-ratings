@@ -1,0 +1,13 @@
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
+  xmlns:ui="nativescript-star-ratings">
+  <StackLayout class="p-20">
+    <Label verticalAlignment="center" text="{{'Rating : '  +  value}}"/>
+    <Button text="Full Fill" tap="full"/>
+    <Button text="Half Fill" tap="half"/>
+    <Button text="Precise Fill" tap="precise"/>
+    <GridLayout height="60" borderRadius="5" backgroundColor="lightgray">
+      <ui:StarRating horizontalAlignment="center" verticalAlignment="center" id="rating" emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="red" value="{{value}}" max="{{max}}"/>
+    </GridLayout>
+  </StackLayout>
+</Page>

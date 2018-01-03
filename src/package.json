@@ -22,7 +22,7 @@
         "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
         "demo.reset": "cd ../demo && rimraf platforms",
         "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-star-ratings && tns plugin add ../src",
-        "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
+        "clean": "cd ../demo && rm -rf hooks node_modules platforms && cd ../src && rm -rf node_modules && npm run plugin.link",
         "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/+(node_modules|typings)/**'"
     },
     "keywords": [
@@ -40,6 +40,11 @@
             "name": "Sean Perkins",
             "email": "sean@devonite.com",
             "url": "https://github.com/sean-perkins"
+        },
+        {
+            "name": "Yeshwanth Alampalli",
+            "email": "yeshwanth.alampalli@gmail.com",
+            "url": "https://github.com/Alampalli-Yeshwanth"
         }
     ],
     "bugs": {

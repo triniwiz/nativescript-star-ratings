@@ -27,7 +27,7 @@ registerElement('StarRating', () => require('nativescript-star-ratings').StarRat
 ```
 
 ```xml
-<StarRating emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="red" value="{{value}}" max="{{max}}"></StarRating>
+<StarRating emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="red" value="{{value}}" max="{{max}}" isindicator="false"></StarRating>
 ```
 
 
@@ -44,6 +44,7 @@ registerElement('StarRating', () => require('nativescript-star-ratings').StarRat
 | filledColor | blue | string | <ul><li>- [ ] </li></ul> |  |
 | value | 0 | number | <ul><li>- [ ] </li></ul> |  |
 | max | 5 | number | <ul><li>- [ ] </li></ul> |  |
+| isindicator | false | boolean | <ul><li>- [ ] </li></ul> |  |
 
 
 

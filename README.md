@@ -44,7 +44,7 @@ registerElement('StarRating', () => require('nativescript-star-ratings').StarRat
 | filledColor | blue | string | <ul><li>- [ ] </li></ul> |  |
 | value | 0 | number | <ul><li>- [ ] </li></ul> |  |
 | max | 5 | number | <ul><li>- [ ] </li></ul> |  |
-| isindicator | false | boolean | <ul><li>- [ ] </li></ul> |  |
+| isindicator | false | boolean | <ul><li>- [ ] </li></ul> | *Android only* |
 
 
 

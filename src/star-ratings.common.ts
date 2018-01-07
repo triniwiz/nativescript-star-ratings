@@ -4,6 +4,7 @@ import {
   CssProperty,
   Style
 } from 'tns-core-modules/ui/core/view';
+import { booleanConverter } from "tns-core-modules/ui/frame/frame";
 
 export enum FillMode {
   FULL = 'full',
@@ -43,6 +44,11 @@ export const filledColorProperty = new CssProperty<Style, string>({
   name: 'filledColor',
   cssName: 'filled-color'
 });
+export const indicatorProperty = new Property<StarRatingBase, boolean>({
+  name: "isindicator",
+  defaultValue: true
+});
+indicatorProperty.register(StarRatingBase);
 fillModeProperty.register(StarRatingBase);
 emptyBorderColorProperty.register(Style);
 filledBorderColorProperty.register(Style);

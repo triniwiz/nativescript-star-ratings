@@ -3,7 +3,8 @@ import {
   maxProperty,
   valueProperty,
   fillModeProperty,
-  FillMode
+  FillMode,
+  indicatorProperty
 } from './star-ratings.common';
 import { layout } from 'tns-core-modules/ui/core/view';
 import { fromObject } from 'tns-core-modules/data/observable';
@@ -29,7 +30,7 @@ export class StarRating extends StarRatingBase {
     const ref = new WeakRef(this);
     this.nativeView.setOnRatingBarChangeListener(
       new android.widget.RatingBar.OnRatingBarChangeListener({
-        onRatingChanged: function(
+        onRatingChanged: function (
           ratingBar: android.widget.RatingBar,
           rating: number,
           fromUser: boolean
@@ -91,6 +92,12 @@ export class StarRating extends StarRatingBase {
           this.nativeView.setStepSize(1.0);
           break;
       }
+    }
+  }
+
+  [indicatorProperty.setNative](isindicator: boolean) {
+    if (this.nativeView) {
+      this.nativeView.setIsIndicator(isindicator);
     }
   }
 

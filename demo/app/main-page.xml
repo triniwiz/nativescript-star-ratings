@@ -7,7 +7,7 @@
     <Button text="Half Fill" tap="half"/>
     <Button text="Precise Fill" tap="precise"/>
     <GridLayout height="60" borderRadius="5" backgroundColor="lightgray">
-      <ui:StarRating horizontalAlignment="center" verticalAlignment="center" id="rating" emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="red" value="{{value}}" max="{{max}}"/>
+        <ui:StarRating horizontalAlignment="center" verticalAlignment="center" id="rating" emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="red" value="{{value}}" max="{{max}}" isindicator="false"/>
     </GridLayout>
   </StackLayout>
 </Page>

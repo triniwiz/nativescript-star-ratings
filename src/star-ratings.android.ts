@@ -10,13 +10,22 @@ import { layout } from 'tns-core-modules/ui/core/view';
 import { fromObject } from 'tns-core-modules/data/observable';
 import { Color } from 'tns-core-modules/color';
 export class StarRating extends StarRatingBase {
-  nativeView: android.widget.RatingBar;
+  nativeView: android.widget.LinearLayout;
+  private _ratingBar;
   private _stars;
   private _filledColor = 'blue';
   private _emptyColor = 'white';
   public createNativeView() {
-    const nativeView = new android.widget.RatingBar(this._context);
-    this._stars = nativeView.getProgressDrawable() as android.graphics.drawable.LayerDrawable;
+    this._ratingBar = new android.widget.RatingBar(this._context);
+    // should be added to fix its layout
+    this._ratingBar.setLayoutParams(new android.widget.LinearLayout.LayoutParams(
+      android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+      android.widget.LinearLayout.LayoutParams.WRAP_CONTENT));
+
+    this._stars = this._ratingBar.getProgressDrawable() as android.graphics.drawable.LayerDrawable;
+
+    const nativeView = new android.widget.LinearLayout(this._context);
+    nativeView.addView(this._ratingBar);
     return nativeView;
   }
 
@@ -28,7 +37,7 @@ export class StarRating extends StarRatingBase {
       this.emptyColor = this._emptyColor;
     }
     const ref = new WeakRef(this);
-    this.nativeView.setOnRatingBarChangeListener(
+    this._ratingBar.setOnRatingBarChangeListener(
       new android.widget.RatingBar.OnRatingBarChangeListener({
         onRatingChanged: function (
           ratingBar: android.widget.RatingBar,
@@ -76,51 +85,51 @@ export class StarRating extends StarRatingBase {
   }
 
   [fillModeProperty.defaultValue]() {
-    this.nativeView.setStepSize(1);
+    this._ratingBar.setStepSize(1);
   }
 
   [fillModeProperty.setNative](value: FillMode) {
-    if (this.nativeView) {
+    if (this._ratingBar) {
       switch (value) {
         case FillMode.HALF:
-          this.nativeView.setStepSize(0.5);
+          this._ratingBar.setStepSize(0.5);
           break;
         case FillMode.PRECISE:
-          this.nativeView.setStepSize(0.1);
+          this._ratingBar.setStepSize(0.1);
           break;
         default:
-          this.nativeView.setStepSize(1.0);
+          this._ratingBar.setStepSize(1.0);
           break;
       }
     }
   }
 
   [indicatorProperty.setNative](isindicator: boolean) {
-    if (this.nativeView) {
-      this.nativeView.setIsIndicator(isindicator);
+    if (this._ratingBar) {
+      this._ratingBar.setIsIndicator(isindicator);
     }
   }
 
   public onLoaded() {
     super.onLoaded();
-    if (this.nativeView && this.value) {
-      this.nativeView.setRating(Number(this.value));
+    if (this._ratingBar && this.value) {
+      this._ratingBar.setRating(Number(this.value));
     }
   }
 
   public disposeNativeView() {
-    if (!this.nativeView) return;
-    this.nativeView.setOnRatingBarChangeListener(null);
+    if (!this._ratingBar) return;
+    this._ratingBar.setOnRatingBarChangeListener(null);
   }
   [valueProperty.setNative](value: number) {
-    if (this.nativeView) {
-      this.nativeView.setRating(Number(this.value));
+    if (this._ratingBar) {
+      this._ratingBar.setRating(Number(this.value));
     }
   }
   [maxProperty.setNative](max: number) {
-    if (this.nativeView) {
-      this.nativeView.setMax(Number(max));
-      this.nativeView.setNumStars(Number(max));
+    if (this._ratingBar) {
+      this._ratingBar.setMax(Number(max));
+      this._ratingBar.setNumStars(Number(max));
     }
   }
 }
